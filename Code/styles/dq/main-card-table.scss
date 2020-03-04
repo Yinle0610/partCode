@@ -1,0 +1,84 @@
+//外层card容器样式--开始
+.dashboard-editor-container {
+  padding: 10px;
+}
+.dashboard-editor-container .card-container /deep/ .el-card__header {
+  padding: 14px 16px;
+}
+.dashboard-editor-container .card-container /deep/ .el-card__body {
+  padding: 16px;
+}
+//外层card容器样式--结束
+
+//card头部header标题，垂直居中
+.clearfix{
+	line-height: 32px;
+}
+.card-table {
+  margin-top: 10px;
+}
+/*去掉表格外层-card容器的padding*/
+.dashboard-editor-container .el-card.card-container .card-table /deep/ .el-card__body{
+  padding: 0
+}
+/*表格字体大小 */
+.card-table .el-table {
+  font-size: 12px;
+}
+
+//表格中a标签颜色
+.a-color {
+  color: #2d8cf0;
+  //font-weight: bold;
+}
+
+//表格 - 表头标题-颜色样式
+.el-card.card-container /deep/ .el-card__body .el-table thead  tr>th{
+  background-color: #F8F8F9;
+}
+//表格 - 表头标题-字体颜色
+.el-card.card-container /deep/ .el-card__body .el-table thead  tr>th div.cell{
+  color: #515a6e;
+}
+
+//表单-标签字体颜色，不加粗
+.el-form /deep/ .el-form-item .el-form-item__label{
+  color: #515a6e;
+  font-weight: normal;
+}
+
+//对话框上、下分隔线
+/deep/ .el-dialog__wrapper {
+  .el-dialog {
+    border-radius: 5px;
+    width: 535px;
+    .el-dialog__header {
+      border-bottom: 1px solid #e8ebed;
+      .el-dialog__title{
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        color: #17233d;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+/deep/ .el-dialog__wrapper {
+  .el-dialog {
+    .el-dialog__footer {
+      border-top: 1px solid #e8ebed;
+    }
+  }
+}
+
+//form表单label标签的字体大小
+.el-form /deep/ .el-form-item{
+  .el-form-item__label{
+    font-size: 12px;
+    padding-right: 5px;
+  }
+}

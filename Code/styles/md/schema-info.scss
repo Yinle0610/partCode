@@ -1,0 +1,330 @@
+@import "../../styles/treeIcon";
+@import "../../styles/variables";
+@import "../../styles/switch";
+
+.schema-info {
+  //数据库信息过滤区
+  .el-form--inline .el-form-item {
+    margin-right: -4px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  .schema-filter{
+    /deep/ .select{
+      .el-input{
+        input{
+          -moz-border-radius-topright: 0px;
+          -moz-border-radius-bottomright: 0px;
+          background-color: #f8f8f9;
+        }
+      }
+    }
+    input{
+
+    }
+    /deep/ .text input{
+      border-radius: 0px;
+      border-left: none;
+      border-right: none;
+    }
+    button{
+      height: 32px;
+      background-color: #f8f8f9;
+    }
+  }
+
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 84px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $page-bg;
+  .content-box {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 84px);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+
+    .left-box {
+      width: 360px;
+      height: 100%;
+      padding: 10px;
+
+      .el-card {
+        width: 340px;
+        height: 100%;
+
+        .el-card__body {
+          padding: 16px;
+          position: relative;
+
+          .title>span{
+            font-weight: normal;
+          }
+           .title {
+            position: relative;
+            font-size: 16px;
+            border-bottom: 1px solid $border;
+            padding: 0 10px 10px 10px;
+            font-weight: bold;
+            line-height: 26px;
+            // 开关样式
+            .el-switch__label {
+              position: absolute;
+              display: none;
+              font-weight: normal;
+            }
+
+            .el-switch__label * {
+              font-size: 12px;
+              color: #fff;
+            }
+
+            .el-switch__label--left {
+              z-index: 9;
+              left: 10px;
+              color: #999;
+            }
+
+            .el-switch__label--right {
+              z-index: 9;
+              left: -19px;
+              color: #fff;
+            }
+
+            .el-switch__label.is-active {
+              display: block;
+              height: 26px;
+              line-height: 26px;
+            }
+
+            .switchStyle.el-switch .el-switch__core,
+            .el-switch .el-switch__label {
+              width: 60px !important;
+            }
+
+            .el-switch,
+            .el-switch__core {
+              height: 26px;
+              line-height: 26px;
+            }
+
+            .el-switch__core {
+              border-radius: 15px;
+
+              &:after {
+                width: 20px;
+                height: 20px;
+                top: 2px;
+                left: 3px;
+                z-index: 10;
+              }
+            }
+
+            .el-switch.is-checked .el-switch__core::after {
+              margin-left: 32px;
+            }
+
+            /deep/ .el-switch {
+              position: absolute;
+              right: 10px;
+              top: 0px;
+
+              .el-switch__label--left {
+                left: 26px;
+              }
+
+              .el-switch__label--right {
+                left: 0;
+              }
+            }
+          }
+
+          .md-filter {
+            margin: 10px;
+
+            .el-input__prefix {
+              cursor: pointer;
+            }
+          }
+
+          .md-tree {
+            height: calc(100vh - 270px);
+            overflow-y: auto;
+
+            .column-class span{
+              display: inline-block;
+              position: relative;
+              top: 4px;
+            }
+
+            .el-tree-node__content {
+              height: 30px;
+              line-height: 30px;
+              font-size: 14px;
+            }
+
+            .tree-node .icon {
+              display: inline-block;
+              position: relative;
+              top: 4px;
+              margin-right: 4px;
+            }
+
+            .tree-node .icon-more {
+              position: relative;
+              left: 1px;
+              top: -1px;
+            }
+          }
+
+        }
+      }
+    }
+
+    .right-box {
+      flex: 1;
+      position: relative;
+      width: calc(100% - 360px);
+      padding: 10px 10px 10px 0;
+      height: 100%;
+
+      .no-data {
+        width: 500px;
+        height: 457px;
+        background: url("./../../assets/images/commonIcon/no-data.png") no-repeat;
+        background-size: 500px 457px;
+        margin: 30px auto;
+      }
+
+      .title-btn-class {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        display: flex;
+        z-index: 9999;
+        margin-right: 10px;
+      }
+
+      .el-card {
+        width: 100%;
+        height: 100%;
+
+        .el-card__body {
+          padding: 16px;
+          position: relative;
+          height: 100%;
+          .has-data{
+            height: 100%;
+            .el-tabs{
+              height: 100%;
+              .el-tabs__content{
+                height: calc(100% - 52px);
+                overflow-y: auto;
+              }
+            }
+          }
+          .no-data {
+            width: 500px;
+            height: 457px;
+            background: url("./../../assets/images/commonIcon/no-data.png") no-repeat;
+            background-size: 500px 457px;
+            margin: 30px auto;
+          }
+
+          .action-box {
+            position: absolute;
+            display: inline-block;
+            right: 16px;
+            z-index: 99;
+
+            .el-button {
+              cursor: pointer;
+            }
+          }
+
+          .md-content {
+            width: 100%;
+            height: calc(100vh - 190px);
+            overflow-y: auto;
+
+            .md-action {
+              display: flex;
+              align-items: center;
+              padding-bottom: 10px;
+              border-bottom: 1px solid $border;
+
+              .dropdow-btn {
+                padding-left: 35px;
+                margin-right: 10px;
+
+                .add-icon {
+                  position: absolute;
+                  display: inline-block;
+                  width: 20px;
+                  height: 20px;
+                  left: 8px;
+                  top: 6px;
+                  background: url("./../../assets/images/commonIcon/add.png") no-repeat;
+                  background-size: 100%;
+                }
+              }
+
+              .edit-btn {
+                padding: 7px 15px;
+
+                i {
+                  font-size: 16px;
+                  padding-right: 8px;
+                }
+              }
+            }
+          }
+
+          .edit-box {
+            position: relative;
+            height: calc(100vh - 120px);
+
+            .edit-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              border-bottom: 1px solid $border;
+              padding-bottom: 10px;
+
+              span {
+                display: inline-block;
+              }
+
+              div {
+                display: inline-block;
+              }
+            }
+
+            .md-form {
+              margin-top: 15px;
+              width: 100%;
+              height: calc(100vh - 230px);
+              overflow-y: auto;
+            }
+
+            .md-fotter {
+              border-top: 1px solid $border;
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              font-size: 14px;
+              padding: 15px 10px;
+              color: #515a6e;
+            }
+          }
+        }
+      }
+    }
+  }
+}

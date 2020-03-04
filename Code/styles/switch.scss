@@ -1,0 +1,58 @@
+// 开关样式(表格里的)
+.el-switch__label {
+  position: absolute;
+  display: none;
+  font-weight: normal;
+}
+
+.el-switch__label * {
+  font-size: 12px;
+  color: #fff;
+}
+
+.el-switch__label--left {
+  z-index: 9;
+  left: 10px;
+  color: #999;
+}
+
+.el-switch__label--right {
+  z-index: 9;
+  left: -19px;
+  color: #fff;
+}
+
+.el-switch__label.is-active {
+  display: block;
+  height: 26px;
+  line-height: 26px;
+}
+
+.switchStyle.el-switch .el-switch__core,
+.el-switch .el-switch__label {
+  width: 60px !important;
+}
+
+.el-switch,
+.el-switch__core {
+  height: 26px;
+  line-height: 26px;
+}
+
+.el-switch__core {
+  border-radius: 15px;
+
+  &:after {
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 3px;
+    z-index: 10;
+  }
+}
+
+.el-switch.is-checked .el-switch__core::after {
+  margin-left: -23px;
+}
+
+// 如在非表格里使用开关 请在当前页面加上.el-switch__label--left {left: 26px;} .el-switch__label--right {left: 0;}
